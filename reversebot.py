@@ -1,5 +1,5 @@
-from yourbot import app,bot_token
-from pyrogram import filters
+from yourbot import app,bot_token, api_id, api_hash
+from pyrogram import filters, Client
 import requests
 from urllib.parse import quote_plus
 from bs4 import BeautifulSoup
@@ -14,6 +14,12 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 # beautifulsoup4
 # @reverse_test_bot - demo bot
 
+# connecting to bot
+app = Client(
+    session_name = "RequestTrackerBot",
+    api_id = Config.API_ID,
+    api_hash = Config.API_HASH,
+    bot_token = Config.BOT_TOKEN
 
 
 async def Sauce(bot_token,file_id):
